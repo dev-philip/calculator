@@ -1,0 +1,442 @@
+<!DOCTYPE html>   
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/icon.png">
+	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style/styling_1.css">
+	<style type="text/css">
+
+	#inputc{
+		width:400px;
+		height: 100px;
+		border:5px solid black;
+		font-size: 50px;
+		text-align: right;
+		border-radius:13px;
+	}
+	#inputnum{
+		width:60px;
+		height: 60px;
+		font-size: 23px;
+		color: black;
+		background-color: white;
+		border-radius: 8px;
+
+	}
+
+	#special{
+		width:62px;
+		height: 60px;
+	
+		padding: 18px;
+		font-size: 18px;
+		color: white;
+		background-color: grey;
+		border-radius: 8px;
+
+	}
+
+
+	#inputnum:hover{
+		background-color: black;
+		transition: 0.9s;
+			color:white;
+	}
+	#special:hover{
+		background-color: black;
+		transition: 0.9s;
+	
+	}
+	#result{
+		width:62px;
+		height: 60px;
+		
+		padding: 18px;
+		font-size: 18px;
+		color: white;
+		background-color: darkorange;
+		border-radius: 8px;
+	}
+	#result:hover{
+		background-color: orange;
+		transition: 0.9s;
+	}
+		
+	#col{
+		float: left;
+		width: 10%;
+	}
+	#cols{
+		float: left;
+		width: 10%;
+	}
+	
+	#colu{
+		float: left;
+		width: 10%;
+	}
+	#colum{
+		float: left;
+		width: 10%;
+	}
+	#first{
+		margin-left: 38.8%;
+	}
+
+	#second{
+		margin-left: 38.8%;
+	}
+
+	#third{
+		margin-left: 38.8%;
+	}
+	#four{
+		margin-left: 38.8%;
+	}
+	#foot{
+		font-size: 18px;
+		font-weight: bold;
+		margin-left: 30px;
+	}
+	
+	/*-------------------------------about style-------------------------*/
+
+#helpo{
+width:600px;
+height:250px;
+border:15px solid black;
+background-color:grey;
+margin-top:190px;
+
+}
+
+#abt{
+font-size:30px;
+font-family:Impact, fantasy;
+text-align:center;
+}
+#ab{
+font-size:20px;
+}
+
+#bb{
+font-size:17px;
+font-family:URW Chancery L, cursive;
+}
+
+.closebtn{
+float:right;
+margin-right:20px;
+ font-size: 60px;
+text-decoration:none;
+color:black;
+}
+
+#mauw{
+height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.1);
+    overflow-x: hidden;
+    transition: 0.5s;
+	
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){ 
+
+	#col{
+		width: 22%;
+	}
+	#cols{
+		width: 22%;
+	}
+	
+	#colu{
+		width: 22%;
+	}
+	#colum{
+		width: 22%;
+	}
+
+	#first{
+		margin-left: 12%;
+	}
+
+	#second{
+		margin-left: 12%;
+	}
+
+	#third{
+		margin-left: 12%;
+	}
+	#four{
+		margin-left: 12%;
+	}
+
+	ul li{
+		width: 110px;
+		font-size:14px;
+	}
+
+	#inputc{
+		width:350px;
+		height: 100px;
+		border:5px solid black;
+		font-size: 50px;
+		text-align: right;
+		border-radius:13px;
+	}
+
+	#foot{
+		text-align: center;
+		margin-left: 0px;
+	}
+}
+/*-------------------------------about style-------------------------*/
+</style>
+</head>
+
+<body id="body">
+<!-- sound click audio -->
+<audio id="audio" src="sound/btnclick.mp3"></audio>
+
+
+<div id="menu" class="menu">
+
+<ul>
+ <li ><a><div id="file"> FILE</a></div>
+<ul>
+ <li><a href="scientific.html">Scientific</a></li>
+ <li><a onclick="play(); win()">New Tab</a></li>
+ <li><a onclick="play(); come()">Exit</a></li>
+ </ul>
+ </li>
+ <li><a><div id="preferences">PREFERENCES</div></a>
+ <ul>
+ <li id="prefe" onclick="play(); colorScheme()"><a>Color Scheme</a></li>
+ </ul>
+ </li>
+ <li><a><div id="help">HELP</a></div>
+ <ul>
+ 	<li  id="helpa"><a onclick="play(); openNav()">About</a></li>
+ </ul>
+ </li>
+</ul>
+
+</div>
+
+<br><br><br><br>
+
+
+<!-------------screen-------------->
+<form>
+<center>
+<input type="text" id="inputc"  disabled> 
+<br><br>
+</center>
+
+<!-------------screen-------------->
+
+<div id="first">
+
+<div id="col">
+<input type="button" class="btn__point" id="special" value="C"  onclick="play(); key('C')">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="special" value="<"  onclick="play(); backspace()">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="special" value="^"  onclick="play(); power()">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="special" value="/"  onclick="play(); key('/')">
+</div>
+</div>
+
+<br><br><br><br>
+<div id="first">
+
+<div id="col">
+<input type="button" class="btn__point" id="inputnum" value="7"  onclick="play(); key('7')">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="inputnum" value="8"  onclick="play(); key('8')">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="inputnum" value="9" name="botton" onclick="play(); key('9')">
+</div>
+
+<div id="col">
+<input type="button" class="btn__point" id="special" value="*" name="operator" onclick="play(); key('*')">
+</div>
+</div>
+
+<br><br><br><br>
+<div id="second">
+<div id="cols">
+<input type="button" class="btn__point" id="inputnum" value="4" name="botton" onclick="play(); key('4')">
+</div>
+
+<div id="cols">
+<input type="button" class="btn__point" id="inputnum" value="5" name="botton" onclick="play(); key('5')">
+</div>
+
+<div id="cols">
+<input type="button" class="btn__point" id="inputnum" value="6" name="botton" onclick="play(); key('6')">
+</div>
+
+<div id="cols">
+<input type="button" class="btn__point" id="special" value="-" name="operator" onclick="play(); key('-')">
+</div>
+</div>
+
+<br><br><br><br>
+<div id="third">
+<div id="colu">
+<input type="button" class="btn__point" id="inputnum" value="1" name="botton" onclick="play(); key('1')">
+</div>
+
+<div id="colu">
+<input type="button" class="btn__point" id="inputnum" value="2" name="botton" onclick="play(); key('2')">
+</div>
+
+<div id="colu">
+<input type="button" class="btn__point" id="inputnum" value="3" name="botton" onclick="play(); key('3')">
+</div>
+
+<div id="colu">
+<input type="button" class="btn__point" id="special" value="+" name="operator" onclick="play(); key('+')">
+</div>
+
+</div>
+
+<br><br><br><br>
+<div id="four">
+<div id="colum">
+<input type="button" class="btn__point" id="inputnum" value="%" name="operator" onclick="play(); percent()">
+</div>
+
+<div id="colum">
+<input type="button" class="btn__point" id="inputnum" value="0" name="botton" onclick="play(); key('0')">
+</div>
+
+<div id="colum">
+<input type="button" class="btn__point" id="inputnum" value="." name="operator" onclick="play(); key('.')">
+</div>
+
+<div id="colum">
+<input type="button" class="btn__point"  id="result" value="=" name="operator" onclick="play(); ans()">
+</div>
+
+</div>
+
+</form>
+
+<div id="mauw">
+<center>
+<div id="helpo">
+<a href="javascript:void(0)" class="closebtn" onclick="play(); closeNav()">&times;</a>
+<br/><br/><br/>
+<div id="abt"><b>Online Maths & Statistic</b></div>
+<br/>
+<div id="bb">A Web Application Created by  Awobusuyi Olamide.
+To assist Our daily Maths & Stat.</div>
+<br/><br/>
+<div id="ab"><b>Copyright &copy; 2018</b></div>
+<div id="fo"><b><i>Powered by Harwop</i></b></div>
+</div>
+</center>
+</div>
+
+<br><br><br><br><br>
+<div id="foot"><i>Powered By Harwop</i></div>
+
+
+<script type="text/javascript">
+// play sound on button click
+function play() {
+    var audio = document.getElementById("audio");
+    audio.play();
+}
+//open in new tab
+function win(){
+	window.open("http://192.168.64.2/webapp/portfolio/inc/projects/calculator/");
+}
+// close active window
+function come(){
+	// $.router.set('https://www.google.com');
+	window.close();
+}
+
+// navigation script
+function openNav() { document.getElementById("mauw").style.width = "100%"; }
+function closeNav() { document.getElementById("mauw").style.width = "0%"; }
+// end of navigation script
+
+//colorScheme
+let counter = 0;
+function colorScheme(){
+
+const bgColor = ['#7FDBFF','#DDDDDD','#FFDC00','#B10DC9','#3D9970','#39CCCC'];
+document.querySelector("body").style.background = bgColor[counter++];
+
+}
+
+var box=document.getElementById('inputc');
+
+	function key(x){
+
+		// if(box.value.length <= 12){
+		// 	box.value+=x;
+		// }
+
+		box.value+=x;
+
+		if (x=='C') {
+			box.value='';
+		}
+	}
+
+	function ans(){
+		x=box.value;
+		x=eval(x);
+		box.value=x;
+	}
+
+	function backspace(){
+		var number=box.value;
+		var len=number.length-1;
+		var newnumber=number.substring(0,len);
+		box.value=newnumber;
+	}
+
+	function power(y){
+		x=box.value;
+		y=x*x;
+		box.value=y;
+	}
+	function percent(y){
+		x=box.value;
+		y=x/100;
+		box.value=y;
+	}
+
+
+		
+
+
+</script>
+</body>
+</html>
